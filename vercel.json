@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "/src/server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "server.js"
+    }
+  ],
+  "build": {
+    "env": {
+      "PORT": 4000,
+      "API_URL": "https://api.freecurrencyapi.com/v1/latest",
+      "API_KEY": "4E0VK7BnkdeUuh1vegAt808v2IUjzUR6lxcvBMT2"
+    }
+  }
+}
