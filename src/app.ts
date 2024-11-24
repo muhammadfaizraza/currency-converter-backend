@@ -1,7 +1,10 @@
-import express, { Application, Request, Response } from "express";
+import express, { Application } from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import currencyRoutes from "./Routes/currencyRoutes";
+
+if (process.env.DBENV !== "PRODUCTION") {
+  dotenv.config({ path: "./src/Config/secrets.env" });
+}
 
 const result = dotenv.config({ path: "./src/Config/secrets.env" });
 if (result.error) {
@@ -10,11 +13,9 @@ if (result.error) {
   console.log("Environment variables loaded successfully");
 }
 
+console.log("work");
 const app: Application = express();
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("Hello from Vercel with TypeScript!");
-});
 app.use(express.json());
 app.use(cors());
 app.use(
@@ -22,6 +23,5 @@ app.use(
     origin: "*",
   })
 );
-app.use("/api", currencyRoutes);
 
 export default app;

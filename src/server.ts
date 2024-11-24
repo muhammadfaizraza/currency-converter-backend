@@ -1,9 +1,6 @@
 import app from "./app";
 import { Server } from "http";
 
-export default (req, res) => {
-  app(req, res);
-};
 const PORT = process.env.PORT;
 const server: Server = app.listen(PORT, () => {
   console.log(`Server is working on port http://localhost:${PORT}`);
