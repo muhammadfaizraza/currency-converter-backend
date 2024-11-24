@@ -1,4 +1,4 @@
-import express, { Application } from "express";
+import express, { Application, Request, Response } from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import currencyRoutes from "./Routes/currencyRoutes";
@@ -23,4 +23,7 @@ app.use(
   })
 );
 app.use("/api", currencyRoutes);
+app.use("/", (req: Request, res: Response) => {
+  res.send("working on vercel");
+});
 export default app;
