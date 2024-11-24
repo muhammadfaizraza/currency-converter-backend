@@ -9,13 +9,11 @@
   "routes": [
     {
       "src": "/(.*)",
-      "destination": "/"
+      "dest": "dist/server.js"
     }
   ],
   "buildCommand": "npm run build",
-  "build": {
-    "env": {
-      "DBENV": "PRODUCTION"
-    }
+  "env": {
+    "DBENV": "PRODUCTION"
   }
 }
