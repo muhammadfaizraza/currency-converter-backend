@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "dist/server.js",
+      "src": "src/server.ts",
       "use": "@vercel/node"
     }
   ],
@@ -12,6 +12,7 @@
       "dest": "dist/server.js"
     }
   ],
+  "buildCommand": "npm run build",
   "build": {
     "env": {
       "DBENV": "PRODUCTION"
