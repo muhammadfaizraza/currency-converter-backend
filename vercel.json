@@ -9,7 +9,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "dist/server.js"
+      "destination": "/"
     }
   ],
   "buildCommand": "npm run build",
